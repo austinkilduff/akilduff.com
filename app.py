@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 import json
 app = Flask(__name__)
 
-blogJsonFilename = '/var/www/akilduff/blog.json'
+blogJsonFilename = 'blog.json'
 
 @app.route('/')
 def index():
@@ -55,3 +55,5 @@ def donate():
 @app.errorhandler(404)
 def notfound(error):
     return render_template('404.html'), 404
+
+app.run()
